@@ -19,8 +19,7 @@
                         {!! Form::file('imagen') !!}
                         <button type="submit">Guardar</button>
                     {!!Form::close()!!}
-
-                    @foreach ($images as $image)
+                    @foreach (Auth::user()->files as $image)
                         <img src="{{Storage::disk('public')->url($image->imagen)}}" alt="" class="img mt-5" width="500">
                     @endforeach
                 </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Files;
 
 class HomeController extends Controller
@@ -24,9 +25,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $files = Files::all();
-        return view('home', [
-            'images' => $files
-        ]);
+        return view('home');
     }
 }
